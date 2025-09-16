@@ -44,6 +44,8 @@ int main(){
         if(!isTrue){
          cout << "0 0" << endl;
         }
+        
+
 
     }
 
