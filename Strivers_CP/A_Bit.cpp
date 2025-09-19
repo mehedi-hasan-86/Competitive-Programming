@@ -14,7 +14,6 @@ int main(){
 
     int n;
     cin >>n;
-
     int res = 0;
     while(n--){
         string s;
