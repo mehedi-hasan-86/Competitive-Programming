@@ -14,7 +14,6 @@ int main(){
 
     string s;
     cin >> s;
-
     int n  = s.size();
     for(int i=0; i<n; i++){
         int d = s[i]-'0';
