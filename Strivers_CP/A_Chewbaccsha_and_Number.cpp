@@ -11,7 +11,7 @@ const int MAX = 1e6 + 5;
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
-
+    
     string s;
     cin >> s;
     int n  = s.size();
@@ -22,7 +22,7 @@ int main(){
             if(i==1 && i==0) continue;
             s[i] = '0'+nd;
         }
-       
+ 
     }
     cout << s << endl;
 
