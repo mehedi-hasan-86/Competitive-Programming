@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ull unsigned long long
+#define lli long long int
+#define endl "\n"
+#define sz(x) (int)(x).size()
+using vl = vector<lli>;
+using vi = vector<int>;
+const int MAX = 1e6 + 5;
+
+void insertionSort(vi &a){
+     int n = a.size();
+     for(int i=1; i<n; i++){
+        if(a[i]>= a[i-1]) continue;
+
+        int key = a[i];
+        int j = i-1;
+        
+
+        while(j>=0 && a[j]>key){
+            a[j+1] = a[j];
+            j--;
+        }
+        a[j+1] = key;
+     }
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    int n;
+    cin >> n;
+
+    vi a(n);
+    for(int i=0; i<n; i++){
+        cin >> a[i];
+    }
+
+    insertionSort(a);
+    for(auto i : a){
+        cout << i << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
