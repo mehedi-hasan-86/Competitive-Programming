@@ -8,7 +8,7 @@ using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
-bool binarySearch(vi a, int num){
+bool binarySearch(vi &a, int num){
     int n = a.size();
     int l = 0, h = n-1;
     while(l<=h){

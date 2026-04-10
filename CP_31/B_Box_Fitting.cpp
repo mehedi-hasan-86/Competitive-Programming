@@ -1,45 +1,48 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+#define ull unsigned long long
+#define lli long long int
+#define endl "\n"
+#define sz(x) (int)(x).size()
+using vl = vector<lli>;
+using vi = vector<int>;
+const int MAX = 1e6 + 5;
 
 int main(){
     ios::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(0);
 
     int t;
     cin >> t;
 
     while(t--){
         int n;
-        long long W;
-        cin >> n >> W;
+        lli w;
+        cin >> n >> w;
 
-        vector<int> cnt(21,0);
-
-        for(int i=0;i<n;i++){
-            long long w;
+        vi cnt(21,0);
+        for(int i=0; i<n; i++){
+            lli w;
             cin >> w;
             int p = log2(w);
             cnt[p]++;
         }
-
-        int height = 0;
-
+        int h =0;
         while(true){
-            long long space = W;
+            lli space = w;
             bool used = false;
-
-            for(int i=20;i>=0;i--){
-                while(cnt[i] && (1LL<<i) <= space){
-                    space -= (1LL<<i);
+            for(int i=20; i>=0; i--){
+                while(cnt[i]&&(1LL<<i)<=space){
+                    space -=(1LL<<i);
                     cnt[i]--;
                     used = true;
                 }
             }
-
             if(!used) break;
-            height++;
+            h++;
         }
-
-        cout << height << "\n";
+        cout << h << endl;
     }
+
+    return 0;
 }

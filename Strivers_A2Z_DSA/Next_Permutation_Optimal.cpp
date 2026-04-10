@@ -7,7 +7,6 @@ using namespace std;
 using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
-
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);

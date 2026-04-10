@@ -32,5 +32,43 @@ int main(){
     cout << (a|b) << endl;
     cout << (a^b) << endl;
 
+    deque<int> d;
+    d.push_back(5); // 5
+    d.push_back(2); // 5 2
+    d.push_back(3); // 5 2 3
+    d.pop_back(); //5 2
+    d.pop_front(); //  2
+
+
+    stack<int> sss;
+    sss.push(3);
+    sss.push(2);
+    sss.push(5);
+    cout << sss.top() << endl; // 5
+    sss.pop();
+    cout << sss.top() << endl; // 2
+
+    queue<int> q;
+    q.push(3);
+    q.push(2);
+    q.push(5);
+    cout << q.front() << endl; // 3
+    q.pop();
+    cout << q.front() << endl;
+
+    priority_queue<int> pq;
+    pq.push(3);
+    pq.push(5);
+    pq.push(7);
+    cout << pq.top() << endl; // 7
+    pq.pop(); 
+    pq.push(6);
+    cout << pq.top() << endl; // 6
+    pq.pop();
+    priority_queue<int,vector<int>, greater<int>>q;
+    
+    
+
+
     return 0;
 }

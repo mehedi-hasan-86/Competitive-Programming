@@ -10,13 +10,14 @@ const int MAX = 1e6 + 5;
 
 class Solution {
 public:
-    int singleNonDuplicate(vector<int>& nums) {
+    int singleNonDuplicate(vector<int>& nums){
         for(int i=0; i< nums.size();i++){
-            if(nums[i] !=nums[i+1] || i == nums.size()-1){
+            if( i == nums.size()-1 || nums[i] !=nums[i+1]){
                 return nums[i]; 
             }
             i++;
         }
+        return -1;
     }
 };
 

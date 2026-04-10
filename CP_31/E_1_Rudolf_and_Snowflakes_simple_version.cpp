@@ -20,7 +20,6 @@ int main(){
         cin >> n;
 
         bool isC = false;
-
         for(lli k=2; k*k<=n; k++ ){
             lli sum = 1 + k + k*k;
             lli term = k*k;

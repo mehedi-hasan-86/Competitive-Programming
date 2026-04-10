@@ -19,7 +19,7 @@ int solve(int n, int key, vi &a){
 
         if(a[mid]==key){
             res = mid;
-            end = mid-1;
+            start = mid+1;
         }else if(key<a[mid]){
             end  = mid-1;
         }else{

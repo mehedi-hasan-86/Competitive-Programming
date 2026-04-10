@@ -20,11 +20,7 @@ public:
         for(int i=0; i<=n; i++){
             find ^=i;
         }
-
-        return find;
-
-
-        
+        return find;   
     }
 };
 

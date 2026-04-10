@@ -16,6 +16,7 @@ int main(){
     // list[2] = 3;
     *(list+2) = 3;
 
+    // Time passes
     int *tmp =malloc(4*sizeof(int));
     if(tmp==NULL){
         free(list);

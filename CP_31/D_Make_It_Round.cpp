@@ -45,7 +45,6 @@ int main(){
         while(k*10 <=m){
             k *=10;
         }
-
         k *=(m/k);
         cout << n*k << endl;
     }

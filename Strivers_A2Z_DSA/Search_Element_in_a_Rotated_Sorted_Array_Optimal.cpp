@@ -26,16 +26,16 @@ int search(vi &a, int target){
                 low = mid+1;
             }
         }else{
-            if(a[mid]<target && target<=nums[high]){
+            if(a[mid]<target && target<=a[high]){
                 low = mid+1;
             }else{
                 high = mid-1;
             }
 
         }
-        return -1;
 
     }
+    return -1;
 }
 
 int main(){

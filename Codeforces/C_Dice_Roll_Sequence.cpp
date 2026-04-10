@@ -1,54 +1,56 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-const int INF = 1e9;
+#define ull unsigned long long
+#define lli long long int
+#define endl "\n"
+#define sz(x) (int)(x).size()
+using vl = vector<lli>;
+using vi = vector<int>;
+const int MAX = 1e6 + 5;
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    // Precompute adjacency
-    vector<vector<int>> adj(7);
-
-    for(int v = 1; v <= 6; v++){
-        for(int u = 1; u <= 6; u++){
-            if(u != v && u != 7 - v){
-                adj[v].push_back(u);
-            }
-        }
-    }
-
     int t;
     cin >> t;
 
     while(t--){
-        int n;
-        cin >> n;
+      int n;
+      cin >> n;
 
-        vector<int> a(n);
-        for(int i = 0; i < n; i++)
-            cin >> a[i];
+      vi a(n);
+      for(int i=0; i<n; i++){
+        cin >> a[i];
+      }
 
-        vector<int> dp(7, INF), newDp(7, INF);
+      vi res(7,1e9), newRes(7,1e9);
 
-        // Base case
-        for(int v = 1; v <= 6; v++)
-            dp[v] = (a[0] != v);
+      for(int i=1; i<=6; i++){
+        res[i] = (a[0] != i);
+      }
 
-        for(int i = 1; i < n; i++){
-            fill(newDp.begin(), newDp.end(), INF);
+      for(int i =1; i<n; i++){
+      newRes.assign(7, 1e9);
 
-            for(int v = 1; v <= 6; v++){
-                for(int u : adj[v]){
-                    newDp[v] = min(newDp[v],
-                                   dp[u] + (a[i] != v));
-                }
+      for(int j=1; j<=6; j++){
+        for(int k=1; k<=6; k++){
+
+            if(j != k && k != 7-j){
+                newRes[j] = min(newRes[j], res[k] + (a[i] != j));
             }
-
-            dp = newDp;
         }
+      }
+      res = newRes;
+      }
 
-        cout << *min_element(dp.begin() + 1, dp.end()) << "\n";
+      int ans = 1e9;
+      for(int i=1; i<=6; i++){
+        ans = min(ans, res[i]);
+      }
+      cout << ans << endl;
+
+
     }
 
     return 0;

@@ -1,5 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define ull unsigned long long
+#define lli long long int
+#define endl "\n"
+#define sz(x) (int)(x).size()
+using vl = vector<lli>;
+using vi = vector<int>;
+const int MAX = 1e6 + 5;
 
 int main(){
     ios::sync_with_stdio(false);
@@ -13,33 +20,25 @@ int main(){
         string s;
         cin >> n >> s;
 
-        // minimum
-        int mn = 0;
-        for(int i=0;i<n;i++){
-            if(s[i]=='1'){
-                int j=i;
-                while(j<n && s[j]=='1') j++;
 
-                int len = j-i;
-                mn += (len+1)/2;
-
-                i=j-1;
+        for(int i=0; i<n-2; i++){
+            if(s[i]=='1' && s[i+2]=='1'){
+                s[i+1] = '1';
             }
         }
 
-        // maximum
-        int first=-1,last=-1;
+        string ss = s;
+       
 
-        for(int i=0;i<n;i++){
-            if(s[i]=='1'){
-                if(first==-1) first=i;
-                last=i;
+           for(int i=0; i<n-2; i++){
+            if(s[i]=='1' && s[i+2]=='1'){
+                s[i+1] = '0';
             }
         }
+        cout << count(s.begin(), s.end(),'1')<< " ";
+        cout << count(ss.begin(), ss.end(),'1') << endl;
 
-        int mx = 0;
-        if(first!=-1) mx = last-first+1;
-
-        cout<<mn<<" "<<mx<<"\n";
     }
+
+    return 0;
 }

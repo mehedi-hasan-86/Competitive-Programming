@@ -8,6 +8,15 @@ using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
+int gcd(int a, int b){
+    while(a>0 && b>0){
+        if(a>b) a = a%b;
+        else b = b%a;
+    }
+    if(a==0) return b;
+    return a;
+}
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -15,6 +24,12 @@ int main(){
     int n;
     cin >> n;
 
+
+
+
+
+
+    // Check Palindrome
     int cnt  = 0;
     for(int i=1; i*i<n; i++){
         if(n%i==0){

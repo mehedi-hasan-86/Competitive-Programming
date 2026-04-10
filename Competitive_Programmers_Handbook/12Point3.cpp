@@ -122,6 +122,9 @@ bool hasCycle(int n){
     }
     return false;
 }
+//------------------------------------
+// Bipartite Check (Using BFS)
+//-----------------------------------
 
 bool isBipartite(int n){
     vector<int> color(n+1, -1);

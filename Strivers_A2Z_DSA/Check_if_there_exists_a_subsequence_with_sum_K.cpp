@@ -26,8 +26,5 @@ int main(){
     vi nums = { 1,2,3,4};
     int target = 5;
     cout << checkSubSequenceSum(nums, target) << endl;
-
-
-
     return 0;
 }

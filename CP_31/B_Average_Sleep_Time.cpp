@@ -18,10 +18,10 @@ int main(){
     vi a(n);
     for(int i=0; i<n; i++) cin >> a[i];
 
-    int sum = 0;
+    double sum = 0;
     for(int i=0; i<k; i++) sum +=a[i];
 
-    vi res;
+    vector<double> res;
     res.push_back(sum);
     for(int i=k; i<n; i++){
         sum +=a[i];

@@ -17,9 +17,7 @@ int main(){
 
     vector<int> v({x,y,z});
     sort(v.begin(), v.end());
-
     cout << (v[1]-v[0]) + (v[2]-v[1]) << endl;
-
 
     return 0;
 }

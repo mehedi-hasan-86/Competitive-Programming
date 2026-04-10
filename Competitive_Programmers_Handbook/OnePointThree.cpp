@@ -32,7 +32,8 @@ int main(){
     // cout << x%m << endl;
 
     double o = 0.3*3 + 0.1;
-    cout << fixed << setprecision(20) << o << endl;
+    cout << fixed << setprecision(20) << o << endl; 
+    //0.99999999999999988898 --> floating point precision error
 
     return 0;
 }

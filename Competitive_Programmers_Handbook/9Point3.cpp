@@ -70,10 +70,5 @@ int main(){
             update(idx, val);
         }
     }
-
-
-
-
-
     return 0;
 }

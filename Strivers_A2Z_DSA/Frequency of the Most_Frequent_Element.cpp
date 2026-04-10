@@ -21,6 +21,8 @@ int maxFrequency(vector<int> &nums, int k){
             if(rem >=cost){
                 rem -=cost;
                 cnt++;
+            }else{
+                break;
             }
         }
         best  = max(best, cnt);

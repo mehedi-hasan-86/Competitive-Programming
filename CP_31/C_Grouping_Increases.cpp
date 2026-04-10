@@ -30,11 +30,11 @@ int main(){
             if(x>y) swap(x,y);
             if(x>=a[i]){
                 x = a[i];
-            }else if(x<a[i] & a[i]<=y){
-                y = a[i];
+            }else if(a[i]>y){
+                x = a[i];
+                ans++;
             }else{
-               ans++;
-               x = a[i]; 
+               y = a[i]; 
             }
         }
         cout << ans << endl;

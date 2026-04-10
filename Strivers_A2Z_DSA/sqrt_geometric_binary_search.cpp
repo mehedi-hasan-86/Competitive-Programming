@@ -9,7 +9,7 @@ using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
 bool check(double mid, double target){
-    return mid*mid*mid*mid>=target;
+    return mid*mid>=target;
 }
 
 int main(){

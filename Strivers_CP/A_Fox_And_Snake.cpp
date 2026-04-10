@@ -15,6 +15,8 @@ int main(){
     int n,m;
     cin >> n >> m;
 
+    //Approach 3 :
+
     string full(m,'#');
     string right = string(m-1,'.') + "#";
     string left = "#" + string(m-1,'.');

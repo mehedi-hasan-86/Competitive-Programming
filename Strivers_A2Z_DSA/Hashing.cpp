@@ -8,7 +8,6 @@ using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
-int hash[10000] = {0};
 
 int main(){
     ios::sync_with_stdio(false);
@@ -21,7 +20,9 @@ int main(){
     for(int i=0; i<n; i++){
         cin >> a[i];
     }
-    
+
+
+    int hash[100] = {0};
     for(int i=0; i<n; i++){
         hash[a[i]]++;
     }

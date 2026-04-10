@@ -23,6 +23,7 @@ int main(){
 
     int sum = a[0], mx = a[0];
 
+    //this code not handle for all negative value so this code is wrong [ from Striver's dsa a2z]
     // for(int i=1; i<n; i++){
     //    sum += a[i];
     //    if(sum > mx ){

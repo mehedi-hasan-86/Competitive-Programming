@@ -14,7 +14,7 @@ public:
          int n = nums.size();
          int left = 0, right = n-1;
 
-         while(left < right){
+         while(left <= right){
             int mid = (left+right)/2;
 
             if(nums[mid]==target){

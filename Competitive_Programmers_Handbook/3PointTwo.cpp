@@ -62,10 +62,5 @@ int main(){
              << get<2>(i) << " " ;
         cout << endl;
     }
-
-
-
-
-
     return 0;
 }

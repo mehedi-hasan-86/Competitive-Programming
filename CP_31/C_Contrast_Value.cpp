@@ -12,6 +12,7 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
+
     int t;
     cin >> t;
 
@@ -20,15 +21,36 @@ int main(){
         cin >> n;
 
         vi a(n);
-        for(int i=0; i<n; i++) cin >> a[i];
-        n = unique(a.begin(), a.end())- a.begin();
-        lli ans = n;
-        for(int i=0; i<n-2; i++){
-            ans -=(a[i]<a[i+1] && a[i+1]<a[i+2]);
-            ans -=(a[i]>a[i+1] && a[i+1]>a[i+2]);
+        for(int i=0; i<n; i++){
+            cin >> a[i];
+        }
 
+        vi b;
+        b.push_back(a[0]);
+        for(int i=1; i<n; i++){
+            if(a[i] != a[i-1]){
+                b.push_back(a[i]);
+            }
+        }
+
+
+        // for(auto x : b){
+        //     cout << x << " ";
+        // }
+        // cout << endl;
+
+        if(b.size()<=2){
+            cout << b.size() << endl;
+            continue;
+        }
+        int ans = b.size();
+        for(int i=0; i<b.size()-2; i++){
+            ans -=(b[i]<b[i+1] && b[i+1]<b[i+2]);
+            ans -=(b[i]>b[i+1] && b[i+1]>b[i+2]);
         }
         cout << ans << endl;
+
+      
 
     }
 

@@ -40,12 +40,6 @@ int main(){
         mxCnt = max(mxCnt, cnt);
 
         cout << mxCnt << endl;
-
-        // if(mxCnt==1){
-        //     cout << 1 << endl;
-        // }else{
-        //     cout << mxCnt+1 << endl;
-        // }
     }
 
     return 0;

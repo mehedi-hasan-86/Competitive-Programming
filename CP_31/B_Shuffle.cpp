@@ -25,7 +25,7 @@ int main(){
             lli l,r;
             cin >> l >> r;
 
-            if(mxR>=l&&mnL<=r){
+            if(mxR>=l && mnL<=r){
                 mnL = min(l,mnL);
                 mxR = max(mxR, r);
                 // cout << mnL << " " << mxR << endl;

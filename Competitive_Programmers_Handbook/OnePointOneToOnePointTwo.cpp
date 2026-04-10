@@ -44,7 +44,7 @@ int main(){
     long long z = y*y;
     cout << z<< endl; //  -1757895751
      long long w = y*1LL*y;
-     cout << w << endl;
+     cout << w << endl; //15241578750190521
 
 
     return 0;

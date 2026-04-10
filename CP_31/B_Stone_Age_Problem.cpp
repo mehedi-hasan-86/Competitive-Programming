@@ -13,56 +13,60 @@ int main(){
     cin.tie(0);
 
     int n,q;
-    cin >> n >> q;
+    cin >> n >>  q;
 
     vl a(n);
-    for(int i=0; i<n; i++){
-        cin >> a[i];
-    }
+    for(int i=0; i<n; i++) cin >> a[i];
+
     lli sum = accumulate(a.begin(), a.end(), 0LL);
 
-    vi LF(n,-1);
-    vl LQ(n,0);
+    vector<bool> vis(n, false);
+    lli last =0;
 
-    for(int i=0; i<n; i++){
-        LQ[i] = a[i];
-    }
+    bool global_set = false;
 
-    int ls = -1;
-    lli lsqv = 0;
-
-    for(int qx = 0; qx<q; qx++){
+    while(q--){
         int t;
         cin >> t;
-
         if(t==1){
-            int i;
-            lli x;
+            int i,x;
             cin >> i >> x;
             i--;
 
-            lli currVal;
-            if(ls > LF[i]){
-                currVal = lsqv;
+            if(global_set){
+            if(!vis[i]){
+                sum -=last;
+                vis[i] = true;
             }else{
-                currVal = LQ[i];
+                sum -=a[i];
             }
-            sum -= currVal;
+
+            }else{
+                sum -=a[i];
+                vis[i] = true;
+            }
+
+         
+
+            a[i] = x;
             sum +=x;
-
-            LF[i] = qx;
-            LQ[i] = x;
-
         }else{
-            lli x;
+
+            int x;
             cin >> x;
 
-            ls =  qx;
-            lsqv = x;
+            last = x;
+            sum = x*(1LL)*n;
 
-            sum = x*(lli)n;
+            global_set = true;
+
+            sum = x*(1LL)*n;
+            fill(vis.begin(), vis.end(), false);
+
         }
+
         cout << sum << endl;
+
     }
 
     return 0;

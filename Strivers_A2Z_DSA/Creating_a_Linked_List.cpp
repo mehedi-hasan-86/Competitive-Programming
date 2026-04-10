@@ -34,8 +34,8 @@ int main(){
 
     Node* y = new Node(a[0]);
 
-    cout << y << endl;
-    cout << y->data << endl;
+    cout << y << endl; // memory location
+    cout << y->data << endl; // data
 
 
     return 0;

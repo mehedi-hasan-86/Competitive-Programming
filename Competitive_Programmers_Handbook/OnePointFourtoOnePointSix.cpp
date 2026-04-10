@@ -9,6 +9,14 @@ using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
 typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int,int> pi;
+#define F fist 
+#define S second 
+#define PB push_back
+#define MP make_pair
+#define REP(i,a,b) for(int i=a; i<=b; i++)
+#define SQ(a) a*a
 
 
 int main(){
@@ -22,7 +30,6 @@ int main(){
     ll m = 123456789;
     ll n = 987654321;
     cout << m*n << endl;
-
 
 
     return 0;

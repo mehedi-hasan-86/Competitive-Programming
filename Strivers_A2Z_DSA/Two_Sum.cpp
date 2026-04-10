@@ -12,20 +12,36 @@ const int MAX = 1e6 + 5;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
+    
         int n = nums.size();
-        sort(nums.begin(), nums.end());
 
-        int l = 0, r = n-1;
-        while(l<r){
-            if(nums[l]+nums[r]==target){
-                return {l,r};
-            }else if(nums[l]+nums[r] > target){
-              r--;
-            }else{
-                l++;
-            }
-        }
-        return {-1,-1};
+        
+       unordered_map<int,int> v;
+       for(int i=0; i<n; i++){
+         v[nums[i]] = 1;
+       }
+
+        // for(int i=0; i<n; i++){
+        //     for(int j=i+1; j<n; j++){
+        //          if(nums[i]+nums[j]==target){
+        //             return {i,j};
+        //          }
+        //     }
+        // }
+        // return {-1,-1};
+        //sort(nums.begin(), nums.end());
+
+    //     int l = 0, r = n-1;
+    //     while(l<r){
+    //         if(nums[l]+nums[r]==target){
+    //             return {l,r};
+    //         }else if(nums[l]+nums[r] > target){
+    //           r--;
+    //         }else{
+    //             l++;
+    //         }
+    //     }
+    //     return {-1,-1};
     }
 };
 

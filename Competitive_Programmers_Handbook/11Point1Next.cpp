@@ -66,13 +66,5 @@ int main(){
     memset(visited, false, sizeof(visited));
     dfs(1);
 
-
-
-
-
-
-
-
-
     return 0;
 }

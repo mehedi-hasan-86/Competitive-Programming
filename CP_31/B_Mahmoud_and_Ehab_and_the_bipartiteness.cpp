@@ -25,7 +25,6 @@ void dfs(int node, int c){
             dfs(child, c^1);
         }
     }
-
 }
 
 int main(){

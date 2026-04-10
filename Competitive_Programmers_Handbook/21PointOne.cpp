@@ -83,6 +83,19 @@ void sieve(){
     }
 }
 
+vector<int> factors(int n){
+    vector<int> f;
+    for(int x = 2; x*x <= n; x++){
+        while(n%x ==0){
+            f.push_back(x);
+            n /=x;
+        }
+    }
+    if(n>1)  f.push_back(n);
+    return f;
+
+}
+
 //----------------------------------------
 // 4. Prime Factorization 
 //----------------------------------------
@@ -154,6 +167,28 @@ bool isPerfect(lli n){
     return sumOfDivisors(n)- n == n;
 }
 
+//----------------------------------------
+// 9. Euler's Totient Function using formula
+//-------------------------------------------
+
+lli phi(lli n){
+    auto factors = primeFactorization(n);
+
+    lli res = 1;
+    for(auto p : factors){
+        lli prime = p.first;
+        lli power = p.second;
+
+        lli term  = 1;
+        for(int i=0; i<power-1; i++){
+            term *=prime;
+        }
+        term *= (prime-1);
+        res *=term;
+    }
+    return res;
+}
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -176,6 +211,8 @@ int main(){
     cout << "Sum of Divisors : " << sumOfDivisors(n) << endl;
     cout <<"Product of Divisors: " << productOfDivisors(n) << endl;
     cout <<"Is it perfect Number: " << isPerfect(28) << endl;
+
+    cout <<"All coprime numbers : " << phi(12) << endl;
 
     return 0;
 }

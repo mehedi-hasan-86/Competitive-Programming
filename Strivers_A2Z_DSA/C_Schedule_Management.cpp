@@ -24,19 +24,26 @@ int main(){
             cnt[x]++;
         }
 
-        for(int tt=1; tt<=2*m; tt++){
+        int l = 1, r = 2*m, ans = 2*m;
 
-            lli need = 0, ext = 0;
+        // for(int tt=1; tt<=2*m; tt++){
+        while(l<=r){
+           int mid = l+(r-l)/2;
+
+             lli need = 0, ext = 0;
             for(int i=1; i<=n; i++){
-                int dn = min(tt,cnt[i]);
+                int dn = min(mid,cnt[i]);
                 need +=cnt[i]-dn;
-                ext +=(tt-dn)/2;
+                ext +=(mid-dn)/2;
             }
             if(ext>=need){
-                cout << tt<< endl;
-                break;
+                ans = mid;
+                r = mid-1;
+            }else{
+                l = mid+1;
             }
         }
+        cout << ans << endl;
     }
 
     return 0;
