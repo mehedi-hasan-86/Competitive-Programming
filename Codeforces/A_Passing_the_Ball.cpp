@@ -16,19 +16,15 @@ int main(){
     cin >> t;
 
     while(t--){
-        int n;
-        string s;
-        cin >> n >> s;
-
-        int idx = 0;
-        set<int> st;
-        st.insert(idx);
-        for(int i=0; i<n; i++){
-            if(s[idx]=='R') idx++;
-            else idx--;
-            st.insert(idx);
+        int n; cin >> n;
+        
+        string s; cin >> s;
+        for(int i=0; i<n;i++){
+            if(s[i]=='L'){
+                cout << i+1 << endl;
+                break;
+            }
         }
-        cout << st.size() << endl;
     }
 
     return 0;
