@@ -16,42 +16,26 @@ int main(){
     cin >> t;
 
     while(t--){
-        int n;
-        cin >> n;
-
+        int n; cin >> n;
         vi a(n);
         for(int i=0; i<n; i++) cin >> a[i];
 
-        set<pair<int,int>> s;
-        for(int i=0; i<n;i++){
-            s.insert({a[i],i});
-        }
-        int ans = 0;
-        int r = n-1;
-        while(!s.empty()){
+        multiset<int> st(a.begin(), a.end());
+        int cnt = 0;
 
-            // int mx = *max_element(a.begin(), a.begin()+n);
-            auto it = s.upper_bound({INT_MAX,r});
-            if(it==s.begin()) break;
-            --it;
-            int idx = it->second;
-            ans++;
-
-            for(int i=idx; i<=r; i++){
-                s.erase({a[i],i});
+        for(int i=n-1; i>=0; i--){
+            int mx = *st.rbegin();
+            if(a[i]==mx){
+                st.erase(prev(st.end()));
+                cnt++;
+            }else{
+                st.erase(st.find(a[i])); 
             }
-            r = idx-1;
-            // int idx = -1;
-            // for(int i=0; i<n; i++){
-            //     if(a[i]==mx){
-            //         idx = i;
-            //     }
-            // }
-            // ans++;
-            // n = idx;
-        }
-        cout << ans << endl;
+             
     }
+    cout << cnt << endl;
+
+}
 
     return 0;
 }
