@@ -16,17 +16,20 @@ int main(){
     cin >> t;
 
     while(t--){
-        
-    int n;
-    cin >> n;
+        int n;
+        cin >> n;
 
-    vi a(n);
-    for(int i=0; i<n; i++) cin >> a[i];
-    if(is_sorted(a.begin(), a.end())){
-        cout << n << endl;
-    }else{
-        cout << 1 << endl;
-    }      
+        vi a(n);
+        for(int i=0;i<n; i++) cin >> a[i];
+
+        bool isC = false;
+        for(int i=0; i<n-1; i++){
+            if(a[i]>a[i+1]){
+                isC = true;
+            }
+        }
+        if(isC) cout << 1 << endl;
+        else cout << n << endl;
     }
 
     return 0;
