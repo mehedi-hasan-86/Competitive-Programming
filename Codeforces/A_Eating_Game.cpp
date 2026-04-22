@@ -21,11 +21,11 @@ int main(){
 
         vi a(n);
         for(int i=0; i<n; i++) cin >> a[i];
-        
-        int mx= *max_element(a.begin(), a.end());
-        int cnt = count(a.begin(), a.end(), mx);
+        sort(a.begin(), a.end());
+
+        int cnt = count(a.begin(), a.end(), a[n-1]);
         cout << cnt << endl;
-     }
+    }
 
     return 0;
 }
