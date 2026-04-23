@@ -19,18 +19,17 @@ int main(){
         int n,m,d;
         cin >> n >> m >> d;
 
-        int h  = 1;
-        while((h-1)*m <= d){
-            h++;
+        int sum = 0;
+        int cnt = 1;
+        while(n>1){
+            sum +=m;
+            if(sum>d){
+                cnt++;
+                sum =0;
+            }
+            n--;
         }
-        h--;
-
-        int tw = 0;
-        while(n>0){
-            n -=h;
-            tw++;
-        }
-        cout << tw << endl;
+        cout << cnt << endl;
     }
 
     return 0;
