@@ -6,8 +6,7 @@ using namespace std;
 #define sz(x) (int)(x).size()
 using vl = vector<lli>;
 using vi = vector<int>;
-const int M = 1e9;
-int dp[20][172];
+const int MAX = 1e6 + 5;
 
 int main(){
     ios::sync_with_stdio(false);
@@ -17,49 +16,38 @@ int main(){
     cin >> t;
 
     while(t--){
-        string s;
-        cin >> s;
-        int n = s.size();
-
-        for(int i=0; i<=n; i++){
-            for(int j=0; j<172; j++){
-                dp[i][j] = M;
-            }
-        }
-        dp[0][0] = 0;
         
-        for(int i=0; i<n; i++){
-            for(int sm = 0; sm<172; sm++){
-                if(dp[i][sm] == M){
-                    continue;
-                }
-                int dig = s[i] - '0';
-                if(sm + dig < 172){
-                    dp[i+1][sm+dig] = min(dp[i+1][sm+dig], dp[i][sm]);
-                }
+    string s;
+    cin >> s;
 
-                    for(int x = 0; x<=9; x++){
-                        if(i==0 && x == 0) continue;
-                        if(x == dig) continue;
+    sort(s.begin(), s.end());
+    cout << s << endl;
 
-                        if(sm + x< 172){
-                            dp[i+1][sm+x] = min(dp[i+1][sm+x], dp[i][sm]+1);
-                        }
-                    }
-                
-            }
+    // vi res;
+    // int cnt = 1;
+    // for(int i=0; i<s.length()-1; i++){
+    //     if(s[i]==s[i+1]){
+    //         cnt++;
+    //     }else{
+    //         res.push_back(cnt);
+    //         cnt = 1;
+    //     }
+    // }
+    // res.push_back(cnt);
 
-        }
-                 int ans = 1e9;
-                for(int sm = 0; sm<=9; sm++){
-                    ans = min(ans, dp[n][sm]);
-                }
-                cout << ans << endl;
+    // int x = *max_element(res.begin(), res.end());
+
+    // cout << (s.length()-x) << endl;
 
 
 
-        
-    }
+    // for(auto x : res){
+    //     cout << x << " ";
+    // }
+    // cout << endl;
+
+   }
+
 
     return 0;
 }
