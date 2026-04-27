@@ -8,7 +8,7 @@ using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
-int ok(int x){
+int cc(int x){
     while(x%2==0){
         x /=2;
     }
@@ -27,42 +27,27 @@ int main(){
         cin >> n;
 
         vi a(n+1);
-        vi pos(n+1);
         for(int i=1; i<=n; i++){
             cin >> a[i];
-            pos[a[i]] = i;
         }
 
-
-
-        // vi res;
-
-        // for(int i=1; i<=n; i++){
-        //     if(a[i-1] != i){
-        //         res.push_back(i);
-        //     }
-        // }
-
         bool isC = true;
-
         for(int i=1; i<=n; i++){
-            if(ok(i) != ok(pos[i])){
+            int idx = i;
+            int val  = a[i];
+
+            idx = cc(idx);
+            val = cc(val);
+
+            
+            if(idx != val){
                 isC = false;
                 break;
             }
         }
-        // for(int i=0; i<res.size()-1; i++){
-        //     if(res[i+1]-res[i] !=2 ){
-        //         isC =false;
-        //     }
-        // }
-        if(isC){
-            cout <<"YES" <<endl;
-        }else{
-            cout <<"NO" << endl;
-        }
-
-
+        if(isC) cout <<"YES" << endl;
+        else cout <<"NO" << endl;
+    
     }
 
     return 0;
