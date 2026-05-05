@@ -24,21 +24,6 @@ int main(){
         for(int i=1; b*i<=m; i++) bb[b*i] = b*i;
         for(int i=1; c*i<=m; i++) cc[c*i] = c*i;
 
-
-    // cout << "aa array: ";
-    // for (int i = 1; i<=m; i++) cout << aa[i] << " ";
-    // cout << "\n";
-
-    // cout << "bb array: ";
-    // for (int i = 1; i <= m; i++) cout << bb[i] << " ";
-    // cout << "\n";
-
-    // cout << "cc array: ";
-    // for (int i = 1; i <= m; i++) cout << cc[i] << " ";
-    // cout << "\n";
-
-    // cout << endl;
-
     vi res(m+1,0);
     for(int i=1; i<=m; i++){
     int cnt = 0;
@@ -51,11 +36,6 @@ int main(){
     else if(cnt == 1) res[i] = 6;
     else res[i] = 0;
 }
-
-    //  cout << "res array: ";
-    // for(int i=1; i<=m; i++) cout << res[i] << " ";
-    // cout << "\n";
-    // cout << endl;
         lli ans_a = 0, ans_b = 0, ans_c = 0;
         for(int i=1; i<=m; i++){ 
             if(aa[i]){

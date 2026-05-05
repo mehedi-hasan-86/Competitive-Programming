@@ -20,8 +20,9 @@ int main(){
         cin >> n;
 
         vi a(n);
-        for(int i=0;i<n; i++) cin >> a[i];
-
+        for(int i=0; i<n; i++){
+            cin >> a[i];
+        }
         bool isC = false;
         for(int i=0; i<n-1; i++){
             if(a[i]>a[i+1]){

@@ -12,42 +12,28 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int t;
-    cin >> t;
-
+    int t; cin >> t;
     while(t--){
-        
-    string s;
-    cin >> s;
+        string s; cin >> s;
+        int sum = 0;
+        vi d;
+        for(int i=0; i<s.size(); i++){
+            int x =s[i]-'0';
+            sum += x;
 
-    sort(s.begin(), s.end());
-    cout << s << endl;
+            if(i==0) d.push_back(x - 1);
+            else d.push_back(x);
+        }
+        sort(d.rbegin(), d.rend());
 
-    // vi res;
-    // int cnt = 1;
-    // for(int i=0; i<s.length()-1; i++){
-    //     if(s[i]==s[i+1]){
-    //         cnt++;
-    //     }else{
-    //         res.push_back(cnt);
-    //         cnt = 1;
-    //     }
-    // }
-    // res.push_back(cnt);
+        int remv = 0;
+        int cnt = 0;
+        while(sum-remv>9){
+            remv +=d[cnt++];
+        }
+        cout << cnt << endl;
 
-    // int x = *max_element(res.begin(), res.end());
-
-    // cout << (s.length()-x) << endl;
-
-
-
-    // for(auto x : res){
-    //     cout << x << " ";
-    // }
-    // cout << endl;
-
-   }
-
+    }
 
     return 0;
 }
