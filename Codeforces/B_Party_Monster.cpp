@@ -1,5 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define ull unsigned long long
+#define lli long long int
+#define endl "\n"
+#define sz(x) (int)(x).size()
+using vl = vector<lli>;
+using vi = vector<int>;
+const int MAX = 1e6 + 5;
 
 int main(){
     ios::sync_with_stdio(false);
@@ -15,35 +22,12 @@ int main(){
         string s;
         cin >> s;
 
-        stack<int> st;
-        vector<bool> valid(n, false);
-
-        for(int i = 0; i < n; i++){
-            if(s[i] == '('){
-                st.push(i);
-            } 
-            else { // ')'
-                if(!st.empty()){
-                    valid[i] = true;
-                    valid[st.top()] = true;
-                    st.pop();
-                }
-            }
+        int cnt = 0;
+        for(int i=0; i<n; i++){
+            if(s[i]==')') cnt++;
         }
-
-        // build remaining string
-        string res = "";
-        for(int i = 0; i < n; i++){
-            if(!valid[i]){
-                res += s[i];
-            }
-        }
-
-        if(res.size() == 0 || (res.size()==2 && (res[0]==')' && res[1]=='('))){
-            cout << "YES" << endl;
-        }else{
-            cout << "NO" << endl;
-        }
+        if(2*cnt == n) cout <<"YES" << endl;
+        else cout <<"NO" << endl;
     }
 
     return 0;
