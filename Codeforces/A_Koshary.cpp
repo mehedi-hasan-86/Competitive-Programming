@@ -21,7 +21,7 @@ int main(){
 
         if(x%2==1 && y%2==1){
             cout <<"NO" << endl;
-        }else {
+        }else{
             cout <<"YES" << endl;
         }
     }
