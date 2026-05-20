@@ -19,7 +19,7 @@ int main(){
         int n;
         cin >> n;
 
-        if(n==67){
+        if(n>=67){
             cout << n << endl;
         }else{
             cout << n+1 << endl;

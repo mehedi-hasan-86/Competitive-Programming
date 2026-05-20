@@ -15,8 +15,8 @@ bool checkIthBit(int n, int b){
         n /=2;
     }
 
-    if(b>binary.size()) return false;
-    return binary[b-1] =='1';
+    if(b>=binary.size()) return false;
+    return binary[b] =='1';
 }
 
 int main(){

@@ -35,11 +35,13 @@ int main(){
     // int mn = INT_MIN;
     // cout << mn << endl;
 
-    double a = 100000;
-    double b = 100000;
-    double c = a*b;
-    c = 1e24;
-    cout <<fixed<< setprecision(0) << c << endl;
+    // double a = 100000;
+    // double b = 100000;
+    // double c = a*b;
+    // c = 1e24;
+    // cout <<fixed<< setprecision(0) << c << endl;
+
+    
 
 
 

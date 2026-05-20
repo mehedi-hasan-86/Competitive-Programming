@@ -51,7 +51,8 @@ int main(){
     // int a[n];
     a[n-1] = 7;
     cout << a[n-1] << endl;
-
+    // always declare globally but try to always declare vector 
+    // that is most useful and best ok
 
     return 0;
 }

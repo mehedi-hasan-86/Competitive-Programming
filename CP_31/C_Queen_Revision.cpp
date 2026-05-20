@@ -26,7 +26,6 @@ int main(){
             continue;
         }
     }
-
     for(int i=1; i<=n; i++){
         if(p[i]==-1) continue;
 

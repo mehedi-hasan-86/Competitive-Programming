@@ -16,8 +16,8 @@ int main(){
     cin >>  n;
 
     vi p(n+1), c(n+1);
-
     vector<bool> canDelete(n+1, true);
+    
     int root = -1;
     for(int i=1; i<=n; i++){
         cin >> p[i] >> c[i];
@@ -33,7 +33,6 @@ int main(){
             canDelete[p[i]]= false;
         }
     }
-
     vi ans;
     for(int i=1; i<=n; i++){
         if(i==root) continue;
@@ -49,8 +48,5 @@ int main(){
         for(int x : ans) cout << x << " ";
         cout << endl;
     }
-
-
-
     return 0;
 }
