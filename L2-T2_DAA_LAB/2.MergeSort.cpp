@@ -8,19 +8,17 @@ using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
-void merge(vi &a, int l, int m, int r){
-    int i = l, j = m+1;
-    vi tmp;
+void merge(vector<int> &a, int l, int m, int r){
+
+    int i=l, j = m+1;
+    vector<int> tmp;
     while(i<=m && j<=r){
         if(a[i]<=a[j]){
-            tmp.push_back(a[i]);
-            i++;
+            tmp.push_back(a[i++]);
         }else{
-            tmp.push_back(a[j]);
-            j++;
+            tmp.push_back(a[j++]);
         }
     }
-
     while(i<=m) tmp.push_back(a[i++]);
     while(j<=r) tmp.push_back(a[j++]);
 
@@ -29,13 +27,13 @@ void merge(vi &a, int l, int m, int r){
     }
 }
 
-void mergeSort(vi &a, int l, int r){
+void mergeSort(vector<int>&a, int l, int r){
     if(l>=r) return;
 
-    int m = l + (r-l)/2;
+    int m = l+ (r-l)/2;
     mergeSort(a,l,m);
     mergeSort(a,m+1, r);
-    merge(a, l, m, r);
+    merge(a,l,m,r);
 }
 
 int main(){
@@ -43,14 +41,15 @@ int main(){
     cin.tie(0);
 
     int n;
-    cin >>  n;
+    cin >> n;
 
-    vi a(n);
+    vector<int> a(n);
     for(int i=0; i<n; i++){
         cin >> a[i];
     }
 
-    mergeSort(a, 0, n-1);
+    mergeSort(a,0,n-1);
+
     for(auto x : a){
         cout << x << " ";
     }
