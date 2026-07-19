@@ -7,7 +7,7 @@ using namespace std;
 using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
-const int INF = 1e18;
+const lli INF = 1e18;
 
 void floydWarshall(vector<vector<lli>> &dist, int n){
 

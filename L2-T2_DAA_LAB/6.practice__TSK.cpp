@@ -40,14 +40,13 @@ void KahnTopoSort(vector<vector<int>> &adj, int n){
     }
 
     if(topoOrder.size() != n){
-        cout <<"Topological Sort has Cycle\n";
+        cout <<"Graph contains Cycle\n";
         return;
     }
 
-    for(int i=0; i<n; i++){
-        cout << topoOrder[i] << " ";
+    for(auto node : topoOrder){
+        cout << node << " ";
     }
-    cout << endl;
     
 }
 

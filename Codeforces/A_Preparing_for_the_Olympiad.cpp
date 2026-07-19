@@ -34,9 +34,7 @@ int main(){
             }
         }
         ans +=a[n-1];
-
         cout << ans << endl;
-
     }
 
     return 0;

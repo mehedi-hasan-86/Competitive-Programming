@@ -19,15 +19,18 @@ void bellmanFord(vector<Edge> &edges, int n, int src){
     dist[src] = 0;
 
     for(int i=1; i<=n-1; i++){
+        bool update = false;
         for(const auto &e : edges){
-            if(dist[e.u] + e.w < dist[e.v] ){
+            if(dist[e.u] != INF &&  dist[e.u] + e.w < dist[e.v] ){
                 dist[e.v] = e.w + dist[e.u];
+                update = true;
             }
         }
+        if(!update) break;
     }
 
     for(const auto &e : edges){
-            if(dist[e.u] + e.w < dist[e.v] ){
+            if(dist[e.u] != INF && dist[e.u] + e.w < dist[e.v] ){
                cout <<"Negative Cycle Detected\n";
                return;
             }

@@ -9,32 +9,40 @@ using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
 
+const lli INF = 1e18;
 
 struct Edge{
     int u,v,w;
 };
 
-void bellmanFord(vector<Edge> &edges, int n, int src){
-    vector<int> dist(n, INT_MAX);
+void bellmanFord(const vector<Edge> &edges, int n, int src){
+    vector<lli> dist(n, INF);
     dist[src] = 0;
 
+   
     for(int i=1; i<=n-1; i++){
-        for(auto e : edges){
-            if(dist[e.u] != INT_MAX && dist[e.u] + e.w < dist[e.v]){
+
+        bool update = false;
+        for(const auto &e : edges){
+            if(dist[e.u] != INF && dist[e.u] + e.w < dist[e.v]){
                 dist[e.v] = dist[e.u] + e.w;
+                update = true;
             }
         }
+        if(!update) break;
     }
 
-    for(auto e : edges){
-        if(dist[e.u]  != INT_MAX && dist[e.u] + e.w < dist[e.v]){
+    for(const auto &e : edges){
+        if(dist[e.u]  != INF && dist[e.u] + e.w < dist[e.v]){
             cout <<"Negative Weight Cycle Found\n";
             return;
         }
     }
     cout <<"Shortest Distance:\n";
     for(int i=0; i<n; i++){
-        cout << i << " : " << dist[i] << endl;
+        cout << i << " : ";
+        if(dist[i]==INF) cout << "INF\n";
+        else cout <<  dist[i] << endl;
     }
 }
 

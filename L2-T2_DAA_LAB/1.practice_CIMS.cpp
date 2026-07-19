@@ -11,7 +11,8 @@ const int MAX = 1e6 + 5;
 lli merge(vector<int> &a, int l, int m, int r){
 
     vector<int> tmp;
-    int i = l, j = m+1, inv = 0;
+    int i = l, j = m+1;
+    lli inv = 0;
 
     while(i<=m && j<=r){
         if(a[i]<=a[j]){
@@ -35,7 +36,7 @@ lli mergeSort(vector<int> &a, int l, int r){
     if(l>=r) return 0;
 
     int m  = l+(r-l)/2;
-    int inv = 0;
+    lli inv = 0;
     inv += mergeSort(a,l,m);
     inv += mergeSort(a,m+1, r);
     inv += merge(a,l,m,r);

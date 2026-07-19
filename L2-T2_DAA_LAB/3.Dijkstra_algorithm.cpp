@@ -8,8 +8,9 @@ using vl = vector<lli>;
 using vi = vector<int>;
 const int MAX = 1e6 + 5;
 
-void dijkstra(vector<pair<int,int>> adj[], int n, int src){
+void dijkstra(vector<vector<pair<int,int>>> &adj, int n, int src){
     vector<int> dist(n,INT_MAX);
+
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
 
     dist[src] = 0;
@@ -47,7 +48,7 @@ int main(){
     int n,e;
     cin >> n >> e;
 
-    vector<pair<int,int>> adj[n];
+    vector<vector<pair<int,int>>> adj(n);
 
     while(e--){
         int u,v,w;
