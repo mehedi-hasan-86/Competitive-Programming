@@ -1,35 +1,31 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+#define ull unsigned long long
+#define lli long long int
+#define endl "\n"
+#define sz(x) (int)(x).size()
+using vl = vector<lli>;
+using vi = vector<int>;
+const int MAX = 1e6 + 5;
 
-int main() {
+int main(){
     ios::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(0);
 
     int t;
     cin >> t;
 
-    while(t--) {
+    while(t--){
         int n;
         cin >> n;
 
-        int low = 1;
-        int mid = n + 1;
-        int high = 3 * n;
-
-        vector<int> p;
-
-        for(int i = 0; i < n; i++) {
-            p.push_back(low);
-            p.push_back(high);
-            p.push_back(mid);
-
-            low++;
-            mid++;
-            high--;
+        for(int i=1; i<=n; i++){
+            int small = i; 
+            int large = 3*n-2*(i-1);
+            int median = large-1;
+            cout  << small << " " <<  large << " " << median << " ";
         }
-
-        for(int x : p) cout << x << " ";
-        cout << "\n";
+        cout << endl;
     }
 
     return 0;
