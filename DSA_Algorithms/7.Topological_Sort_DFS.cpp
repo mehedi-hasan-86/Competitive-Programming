@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ull unsigned long long
+#define lli long long int
+#define endl "\n"
+#define sz(x) (int)(x).size()
+using vl = vector<lli>;
+using vi = vector<int>;
+const int MAX = 1e6 + 5;
+
+void dfs(int node, stack<int> &st, vector<bool> &visited, vector<vector<int>> &adj){
+    visited[node] = true;
+    for(auto child : adj[node]){
+        if(!visited[child]){
+            dfs(child, st, visited, adj);
+        }
+    }
+    st.push(node);
+}
+
+void topo_DFS(vector<vector<int>> &adj, int n){
+
+    vector<bool> visited(n, false);
+    stack<int> st;
+
+     for(int i=0; i<n; i++){
+        if(!visited[i]){
+            dfs(i,st, visited, adj);
+        }
+     }
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    int n,e;
+    cin >> n >> e;
+
+    vector<vector<int>> adj(n);
+    while(e--){
+        int u,v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+    }
+    topo_DFS(adj, n);
+
+    return 0;
+}
