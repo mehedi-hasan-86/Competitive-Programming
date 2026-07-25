@@ -27,15 +27,14 @@ int main(){
 
         lli val = 0;
         bool isC = true;
-        for(int i=0; i<n-1; i++){
+        for(int i=0; i<n; i++){
             val +=(a[i]-(i+1));
             if(val<0){
                 isC = false;
                 break;;
             }
         }
-        // cout << val << endl;
-        if( isC && val+a[n-1]>=n){
+        if(isC){
             cout <<"YES" << endl;
         }else{
             cout <<"NO" << endl;
