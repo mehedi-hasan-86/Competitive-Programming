@@ -29,7 +29,23 @@ int main() {
     }
     for(int i=0; i<m; i++){
         cin >> b[i];
-        cout << lower_bound(a.begin(), a.end(), b[i]) - a.begin() << " ";
+        // cout << lower_bound(a.begin(), a.end(), b[i]) - a.begin() << " ";
+    }
+    // int j = 0;
+    // for(int i=0; i<m; i++){
+    //     while(j<n && a[j]<b[i]){
+    //         j++;
+    //     }
+    //     cout << j <<" ";
+    // }
+
+    int j = 0;
+
+    for(int i=0; i<m; i++){
+        while(j<n && a[j] < b[i]){
+            j++;
+        }
+        cout << j << " ";
     }
 
 
