@@ -1,44 +1,58 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define F first
-#define S second
-#define PB push_back
-#define MP make_pair
-#define REP(i, a, b) for (int i = a; i <= b; i++)
-#define all(x) (x).begin(), (x).end()
-#define endl '\n'
-typedef long long int lli;
-typedef vector<int> vi;
-typedef pair<int,int> pi;
-typedef vector<long long> vl;
-typedef vector<pair<int,int>> vpi;
-const int INF = 1e9;
-const int MOD = 1e9 + 7;
-const int N = 1e6;
 
-int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+#define endl '\n'
+
+typedef long long lli;
+
+typedef tree<
+    int,
+    null_type,
+    less<int>,
+    rb_tree_tag,
+    tree_order_statistics_node_update
+> ordered_set;
+
+void solve()
+{
+    int n;
+    cin >> n;
+
+    vector<pair<int,int>> a(n);
+
+    for(auto &p : a)
+        cin >> p.second >> p.first;
+
+    sort(a.begin(), a.end());
+
+    lli ans = 0;
+    ordered_set st;
+
+    for(auto p : a)
+    {
+        ans += st.size() - st.order_of_key(p.second);
+
+        st.insert(p.second);
+    }
+
+    cout << ans << endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     int t;
     cin >> t;
 
-    while(t--){
-        int n;
-        cin >> n;
-
-        vl a(n),b(n);
-        for(int i=0; i<n; i++){
-            cin >> a[i] >> b[i];
-        }
-        lli ans = 0;
-        for(int i=0; i<n; i++){
-            for(int j=0; j<n; j++){
-                if(a[i]<a[j] && b[i]>b[j]) ans ++;
-            }
-        }
-        cout << ans << endl;
-    }
+    while(t--)
+        solve();
 
     return 0;
 }
