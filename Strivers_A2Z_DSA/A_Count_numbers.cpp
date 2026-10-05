@@ -35,8 +35,6 @@ int main() {
         else if(z==2){
             cout << freq[x] << endl;
         }
-
-
     }
 
     return 0;
