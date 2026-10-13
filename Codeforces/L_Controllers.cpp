@@ -42,7 +42,6 @@ int main() {
             }else{
                 cout <<"NO" << endl;
             }
-            
         }else{
             cout <<"NO" << endl;
         }
